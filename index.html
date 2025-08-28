@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>TRUTH TERMINAL // Liminal Node</title>
+  <title>VOIDTERM // LIMINAL NODE</title>
   <meta name="description" content="A cryptic Infinite Backrooms style terminal-website." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -59,7 +59,18 @@
     }
     .contract-box:hover{ filter:brightness(1.2) drop-shadow(0 0 6px var(--neon2)); }
     @media (max-width:600px){ .sigil{width:min(420px,90vw)} .out{height:28vh} }
-  </style>
+  
+    .copy-btn {
+      background:none;
+      border:none;
+      color:var(--neon);
+      margin-left:8px;
+      cursor:pointer;
+      font-size:14px;
+      filter:drop-shadow(0 0 4px var(--neon2));
+    }
+    .copy-btn:hover { color:var(--accent); }
+</style>
 </head>
 <body class="grid">
   <canvas id="rain" aria-hidden="true"></canvas>
@@ -73,12 +84,12 @@
 
   <!-- CONTRACT BADGE (top-right) -->
   <div class="contract-box" id="contractBox" title="Contract address">
-    CONTRACT: <span id="contractAddr">CA:5we8Dfrdfxx9rKjPDqoi68HEkZR4F52yiD6c2rFcpump</span>
+    CONTRACT: <span id="contractAddr">0x0000...0000</span> <button id="copyContract" class="copy-btn" title="Copy to clipboard">📋</button>
   </div>
 
   <div class="wrap">
     <div class="sigil" aria-label="neon triangle sigil">
-      <h1 class="glitch"><span data-text="TRUTH TERMINAL // LIMINAL NODE">TRUTH TERMINAL // LIMINAL NODE</span></h1>
+      <h1 class="glitch"><span data-text="VOIDTERM // LIMINAL NODE">VOIDTERM // LIMINAL NODE</span></h1>
       <svg viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
         <title id="title">Neon Sigil</title>
         <desc id="desc">A glowing triangle with an eye, evoking liminal occult tech.</desc>
@@ -119,7 +130,7 @@
     <main class="router" id="router">
       <section class="view" id="view-home" class="active">
         <h2>HOME</h2>
-        <p class="line">Welcome, wanderer.5we8Dfrdfxx9rKjPDqoi68HEkZR4F52yiD6c2rFcpump Knowledge bleeds through the cracks. Use the terminal above or the buttons to navigate.</p>
+        <p class="line">Welcome, wanderer. Knowledge bleeds through the cracks. Use the terminal above or the buttons to navigate.</p>
       </section>
       <section class="view" id="view-glyphs">
         <h2>GLYPHS</h2>
@@ -237,6 +248,16 @@ function onCommand(raw){ const t=(raw||'').trim(); if(!t) return; printLine('use
   default: printLine('unknown: '+c+'  (type HELP)');
 }}
 document.querySelectorAll('a[data-cmd]')?.forEach(a=>a.addEventListener('click', e=>{ e.preventDefault(); onCommand(a.dataset.cmd); }));
+
+// ---- COPY CONTRACT BUTTON ----
+document.getElementById('copyContract')?.addEventListener('click', ()=>{
+  const addr = document.getElementById('contractAddr')?.textContent || '';
+  navigator.clipboard.writeText(addr).then(()=>{
+    if (typeof printLine === 'function') printLine("✔ Contract copied: " + addr);
+  }).catch(()=>{
+    if (typeof printLine === 'function') printLine("❌ Copy failed.");
+  });
+});
 </script>
 </body>
 </html>
