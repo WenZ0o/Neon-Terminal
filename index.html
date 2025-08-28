@@ -64,7 +64,7 @@
   </div>
   <div class="wrap">
     <div class="sigil" aria-label="neon triangle sigil">
-      <h1 class="glitch"><span data-text="TRUTH TERMINAL // LIMINAL NODE">TRUTH TERMINAL // LIMINAL NODE</span></h1>
+      <h1 class="glitch"><span data-text="NEON-TERMINAL // LIMINAL NODE">NEON-TERMINAL // LIMINAL NODE</span></h1>
       <svg viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
         <title id="title">Neon Sigil</title>
         <desc id="desc">A glowing triangle with an eye, evoking liminal occult tech.</desc>
@@ -118,7 +118,7 @@
       </section>
       <section class="view" id="view-about">
         <h2>ABOUT</h2>
-        <p class="line">Inspired by truthterminal.wiki. Liminal, neon, terminal-driven micro-site.</p>
+        <p class="line">Inspired by neon-terminal.wiki. Liminal, neon, terminal-driven micro-site.</p>
       </section>
     </main>
   </div>
@@ -167,7 +167,7 @@ function solvePuzzle(input){ const parts=input.trim().split(/\s+/); if(parts.len
 // ===== COMMAND ROUTER =====
 function help(){ printLine('AVAILABLE COMMANDS:'); ['HELP','ACCESS 313','LORE','LINKS','BACKROOMS','PUZZLES','SOLVE <id> <answer>','RELOAD','SHOW LORE','SHOW NOTES','SHOW GLYPHS','CLEAR'].forEach(c=>printLine('  '+c)) }
 function backrooms(){ printLine('[FIELD BRIEFING v2.1]'); printLine(' SAFE  — know your limits; calibrate fear'); printLine(' SANE  — reality checks every 10 minutes'); printLine(' CONSENSUAL — do not pull others across without a signal'); printLine(' If lost: follow the hum until it stutters. Then stop.') }
-function links(){ printLine('TRUSTED LINKS:'); printLine('  » truthterminal.wiki  // classified archive') }
+function links(){ printLine('TRUSTED LINKS:'); printLine('  » neon-terminal.wiki  // classified archive') }
 function lore(){ state.lore.fragments.forEach(s=>printLine('• '+s)) }
 function access(code){ const seed=(code||'').toString().trim(); if(seed==='313'){ printLine('ACCESS 313: triangulating… portal wobble detected.'); location.hash='#/glyphs' } else if(seed){ printLine('ACCESS '+seed+': denied.') } else { printLine('ACCESS: missing code. Example: ACCESS 313') } }
 function clearOut(){ output.innerHTML='' }
