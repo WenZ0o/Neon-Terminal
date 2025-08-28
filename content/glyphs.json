@@ -1,1 +1,34 @@
-
+{
+  "items": [
+    {
+      "title": "SIGIL-01",
+      "src": "assets/sigil_1.webp",
+      "caption": "Liminal glyph 1"
+    },
+    {
+      "title": "SIGIL-02",
+      "src": "assets/sigil_2.webp",
+      "caption": "Liminal glyph 2"
+    },
+    {
+      "title": "SIGIL-03",
+      "src": "assets/sigil_3.webp",
+      "caption": "Liminal glyph 3"
+    },
+    {
+      "title": "SIGIL-04",
+      "src": "assets/sigil_4.webp",
+      "caption": "Liminal glyph 4"
+    },
+    {
+      "title": "SIGIL-05",
+      "src": "assets/sigil_5.webp",
+      "caption": "Liminal glyph 5"
+    },
+    {
+      "title": "SIGIL-06",
+      "src": "assets/sigil_6.webp",
+      "caption": "Liminal glyph 6"
+    }
+  ]
+}
